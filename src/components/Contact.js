@@ -126,7 +126,7 @@ function Contact() {
               title="Open personal website in a new tab"
               data-testid="contact-website-link"
             >
-              {website.replace(/^https?:///, '')}
+              {website.replace(/^https?:\/\//, '')}
             </a>
           </dd>
         </div>

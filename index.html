@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Developer Profile Page - A responsive showcase of Jane Doe's professional bio, skills, experience, and contact information." />
+    <meta name="author" content="Jane Doe" />
+    <meta name="theme-color" content="#2563eb" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Developer Profile | Jane Doe" />
+    <meta property="og:description" content="A responsive developer profile showcasing bio, skills, experience, and contact information." />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Developer Profile | Jane Doe" />
+    <meta property="twitter:description" content="A responsive developer profile showcasing bio, skills, experience, and contact information." />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/src/assets/logo.svg" />
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <title>Developer Profile | Jane Doe</title>
+  </head>
+  <body>
+    <!-- Main application container -->
+    <div id="root"></div>
+    
+    <!-- Fallback content for users with JavaScript disabled -->
+    <noscript>
+      <div style="
+        padding: 2rem; 
+        text-align: center; 
+        background: #f9fafb; 
+        border: 1px solid #e5e7eb; 
+        border-radius: 8px; 
+        margin: 2rem; 
+        font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      ">
+        <h1>JavaScript Required</h1>
+        <p>This application requires JavaScript to run properly. Please enable JavaScript in your browser and refresh the page.</p>
+        <p>If you continue to experience issues, please contact support.</p>
+      </div>
+    </noscript>
+    
+    <!-- Application entry point -->
+    <script type="module" src="/src/index.js"></script>
+  </body>
+</html>
