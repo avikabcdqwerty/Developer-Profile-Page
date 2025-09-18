@@ -1,0 +1,124 @@
+{
+  "name": "developer-profile-page",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A static, responsive developer profile page built with React, showcasing bio, skills, experience, and contact information with brand-compliant styling and accessibility.",
+  "author": "Jane Doe",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173",
+    "lint": "eslint \"src/**/*.{js,jsx}\"",
+    "lint:fix": "eslint --fix \"src/**/*.{js,jsx}\"",
+    "format": "prettier --write .",
+    "test": "jest --watch",
+    "test:ci": "jest --ci --runInBand"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
+    "@vitejs/plugin-react": "^4.3.1",
+    "babel-jest": "^29.7.0",
+    "eslint": "^9.11.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.3.3",
+    "vite": "^5.4.2"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest"
+    },
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "esmodules": true
+          }
+        }
+      ],
+      [
+        "@babel/preset-react",
+        {
+          "runtime": "automatic",
+          "development": false
+        }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2022": true,
+      "jest": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:jsx-a11y/recommended",
+      "prettier"
+    ],
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2022,
+      "sourceType": "module"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "rules": {
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off",
+      "jsx-a11y/anchor-is-valid": "off"
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": true,
+    "printWidth": 100,
+    "trailingComma": "none"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
+  ]
+}

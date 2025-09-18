@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  width="64"
+  height="64"
+  role="img"
+  aria-labelledby="logoTitle logoDesc"
+>
+  <title id="logoTitle">Jane Doe Developer Logo</title>
+  <desc id="logoDesc">Circular monogram with the letters J and D on an indigo gradient background.</desc>
+
+  <defs>
+    <!-- Indigo gradient aligned with brand colors -->
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#4338ca"/>
+    </linearGradient>
+
+    <!-- Subtle inner shadow for depth on light/dark backgrounds -->
+    <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feOffset dx="0" dy="1"/>
+      <feGaussianBlur stdDeviation="1.5" result="offset-blur"/>
+      <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
+      <feFlood flood-color="rgba(0,0,0,0.35)" flood-opacity="0.35" result="color"/>
+      <feComposite operator="in" in="color" in2="inverse" result="shadow"/>
+      <feComposite operator="over" in="shadow" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <!-- Background circle using brand gradient -->
+  <circle cx="32" cy="32" r="30" fill="url(#g)" filter="url(#innerShadow)"/>
+
+  <!-- Monogram: J and D, geometric and crisp for small sizes -->
+  <g fill="#ffffff" aria-hidden="true">
+    <!-- J -->
+    <path d="M18 16h6v22c0 6.627 5.373 12 12 12h2v6h-2c-9.941 0-18-8.059-18-18V16z" opacity="0.95"/>
+
+    <!-- D -->
+    <path d="M28 16h8c9.389 0 17 7.611 17 17s-7.611 17-17 17h-8V16zm8 6c6.076 0 11 4.924 11 11s-4.924 11-11 11h-2V22h2z" opacity="0.95"/>
+  </g>
+</svg>

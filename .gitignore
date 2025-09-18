@@ -1,0 +1,51 @@
+# Node modules
+node_modules/
+# Build output
+build/
+dist/
+# Vite cache
+.vite/
+# Create React App cache
+.cache/
+# Dependency directories
+jspm_packages/
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+# Environment variables
+.env
+.env.*
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+# OS generated files
+.DS_Store
+Thumbs.db
+# Test coverage
+coverage/
+# Jest cache
+jest-cache/
+jest.config.js
+# ESLint cache
+.eslintcache
+# Prettier cache
+.prettiercache
+# PostCSS cache
+.postcssrc.*
+# Misc
+*.log
+*.lock
+# Styled Components generated files
+*.styled.*
+# Parcel cache
+.cache/
+.parcel-cache/
+# Optional: ignore yarn and pnpm files if not used
+yarn.lock
+pnpm-lock.yaml
+# Optional: ignore Mac system files
+*.DS_Store

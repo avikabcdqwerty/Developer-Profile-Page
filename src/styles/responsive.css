@@ -1,0 +1,182 @@
+/* ==========================================================================
+   Responsive Stylesheet
+   Enhances layout across breakpoints and provides print optimizations.
+   Mobile-first: base styles live in brand.css; this file progressively
+   augments for wider viewports.
+   ========================================================================== */
+
+/* Small tablets and up */
+@media (min-width: 640px) {
+  .section {
+    padding: var(--space-10) var(--space-6);
+  }
+
+  /* Slightly widen definition term columns */
+  .bio-meta-row,
+  .contact-row {
+    grid-template-columns: 160px 1fr;
+  }
+
+  /* Make skills chips a touch larger for readability */
+  .skill-chip {
+    font-size: var(--fs-16);
+    padding: 0.4rem 0.7rem;
+  }
+
+  /* Increase min column width gently at this breakpoint */
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+/* Tablets and up */
+@media (min-width: 721px) {
+  /* Restore desktop nav layout hidden by small-screen rules in brand.css */
+  .nav-toggle {
+    display: none;
+  }
+  .primary-nav {
+    position: static;
+    display: block;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+  .primary-nav .nav-list {
+    flex-direction: row;
+    gap: var(--space-4);
+  }
+
+  /* Bio layout: use a larger portrait with comfortable spacing */
+  .bio-body {
+    grid-template-columns: 180px 1fr;
+  }
+  .bio-photo img,
+  .bio-photo-fallback {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* Footer to two columns: brand + nav */
+  .footer-inner {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+}
+
+/* Medium desktops and up */
+@media (min-width: 900px) {
+  .section {
+    padding: var(--space-12) var(--space-6);
+  }
+
+  /* Skills grid with roomier cards */
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-8);
+  }
+
+  /* Experience: split into two columns while maintaining reading order */
+  .experience-list {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+
+  .bio {
+    padding: var(--space-10);
+  }
+}
+
+/* Large desktops and up */
+@media (min-width: 1200px) {
+  .section {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+
+  .header-inner,
+  .footer-inner,
+  .section > * {
+    max-width: calc(var(--max-width) + 80px); /* allow a bit more breathing space */
+  }
+
+  /* Bio image and title scale up slightly */
+  .bio-photo img,
+  .bio-photo-fallback {
+    width: 200px;
+    height: 200px;
+  }
+  .bio-title {
+    font-size: var(--fs-36);
+  }
+
+  /* Experience list spacing increases for visual hierarchy */
+  .experience-list {
+    gap: var(--space-8);
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1536px) {
+  .header-inner,
+  .footer-inner,
+  .section > * {
+    max-width: 1280px;
+  }
+}
+
+/* Print styles: ensure clean, ink-friendly output */
+@media print {
+  :root {
+    --print-text: #000;
+  }
+  body {
+    background: #fff !important;
+    color: var(--print-text) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide non-essential interactive UI */
+  .site-header,
+  .site-footer,
+  .nav-toggle,
+  .primary-nav,
+  .skip-link {
+    display: none !important;
+  }
+
+  /* Expand content width */
+  .section {
+    padding: 0;
+  }
+  .section > * {
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Remove decorative backgrounds and borders */
+  .bio,
+  .skills,
+  .experience,
+  .contact,
+  .skills-category,
+  .experience-card {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Use single-column layouts */
+  .bio-body,
+  .experience-list {
+    display: block !important;
+  }
+
+  /* Make links readable with URLs */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.9em;
+  }
+}
